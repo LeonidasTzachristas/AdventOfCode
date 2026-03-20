@@ -4,42 +4,61 @@ public static class Day2
 {
     private static string path = @"/home/tzack/RiderProjects/AdventOfCode/AdventOfCode2020/Data/Day2Data.txt";
     
+    private static List<Line> DataToLine()
+    {
+        List<Line> lst = [];
+        foreach (string line in File.ReadAllLines(path))
+        {
+            string[] newLine = line.Replace("\n", "")
+                .Replace(":", "")
+                .Split(new char[] { '-', ' ', ':'});
+            
+            lst.Add(new Line(
+                int.Parse(newLine[0]), 
+                int.Parse(newLine[1]), 
+                char.Parse(newLine[2]), 
+                newLine[3]
+                ));
+        }
+
+        return lst;
+    }
     
     public static int GetDay2_1Result()
     {
-        List<Line> lst = [];
         int totalCount = 0;
-        string[] lines = File.ReadAllLines(path);
-        foreach (string line in lines)
+        foreach (Line l in DataToLine())
         {
-            string[] newLine = line.Replace("\n", "").Replace(":", "").Split(new char[] { '-', ' ', ':'});
-            lst.Add(new Line
+            int count = l.Code.Count(c => c == l.Target); 
+            if (count >= l.Lower && count <= l.Upper)
             {
-                lower = int.Parse(newLine[0]),
-                upper = int.Parse(newLine[1]),
-                target = char.Parse(newLine[2]),
-                code = newLine[3]
-            });
-        }
-        
-        foreach (Line l in lst)
-        {
-            int count = l.code.Count(c => c == l.target); 
-            if (count >= l.lower && count <= l.upper)
-            {
-                totalCount += 1;
+                totalCount++;
             }
         }
         
         return totalCount;
     }
 
+    public static int GetDay2_2Result()
+    {
+        int TotalCount = 0;
+        foreach (Line line in DataToLine())
+        {
+            if (line.Code[line.Lower-1] == line.Target ^        // XOR
+                line.Code[line.Upper-1] == line.Target)
+            {
+                TotalCount++;
+            }
+        }
 
+        return TotalCount;
+    }
+    
     struct Line(int l, int u, char t, string c)
     {
-        public int lower = l;
-        public int upper = u;
-        public char target = t;
-        public string code = c;
+        public readonly int Lower = l;
+        public readonly int Upper = u;
+        public readonly char Target = t;
+        public readonly string Code = c;
     }
 }

@@ -17,9 +17,9 @@ public static class Day1
             {
                 if (numbers[i] + numbers[k] == 2020)
                 {
-                    Console.WriteLine(
-                        $"{numbers[i]} + {numbers[k]} = " +
-                        $"{numbers[i] + numbers[k]}");
+                    // Console.WriteLine(
+                    //     $"{numbers[i]} + {numbers[k]} = " +
+                    //     $"{numbers[i] + numbers[k]}");
                     return numbers[i] * numbers[k];
                 }
             }
@@ -39,9 +39,9 @@ public static class Day1
                 {
                     if (numbers[i] + numbers[j] + numbers[k] == 2020)
                     {
-                        Console.WriteLine(
-                            $"{numbers[i]} + {numbers[j]} + {numbers[k]} = " +
-                            $"{numbers[i] + numbers[j] + numbers[k]}");
+                        // Console.WriteLine(
+                        //     $"{numbers[i]} + {numbers[j]} + {numbers[k]} = " +
+                        //     $"{numbers[i] + numbers[j] + numbers[k]}");
                         return numbers[i] * numbers[j] * numbers[k];
                     }
                 }
