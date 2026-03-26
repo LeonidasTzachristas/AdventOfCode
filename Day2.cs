@@ -2,7 +2,7 @@ namespace AdventOfCode2020.Data;
 
 public static class Day2
 {
-    private static string path = @"/home/tzack/RiderProjects/AdventOfCode/AdventOfCode2020/Data/Day2Data.txt";
+    private static string path = @"./Data/Day2Data.txt";
     
     private static List<Line> DataToLine()
     {
