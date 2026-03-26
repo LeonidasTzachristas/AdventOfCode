@@ -2,7 +2,7 @@ namespace AdventOfCode2020.Data;
 
 public static class Day1
 {
-    private static string path = @"/home/tzack/RiderProjects/AdventOfCode/AdventOfCode2020/Data/Day1Data.txt";
+    private static string path = @"./Data/Day1Data.txt";
     static List<int> numbers = File.ReadAllLines(path)
         .Select(int.Parse)
         .ToList();
