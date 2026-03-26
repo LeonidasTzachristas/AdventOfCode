@@ -4,7 +4,7 @@ namespace AdventOfCode2020.Data;
 
 public static class Day3
 {
-    private static string path = @"/home/tzack/RiderProjects/AdventOfCode/AdventOfCode2020/Data/Day3Data.txt";
+    private static string path = @"./Data/Day3Data.txt";
 
     private static char[][] DataToArray()
     {
