@@ -2,7 +2,7 @@ namespace AdventOfCode2020.Data;
 
 public class Day4
 {
-    private static string path = @"/home/tzack/RiderProjects/AdventOfCode/AdventOfCode2020/Data/Day4Data.txt";
+    private static string path = @"./Data/Day4Data.txt";
     private static IEnumerable<string> fields = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"];
     
     public static int GetDay4_1Result()
